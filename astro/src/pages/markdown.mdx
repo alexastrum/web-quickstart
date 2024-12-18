@@ -1,9 +1,9 @@
-import Layout from "@/layouts/Layout.astro";
+---
+layout: "@/layouts/MarkdownLayout.astro"
+---
+
 import { Button } from "@/components/ui/button";
 import ServerComponent from "@/components/samples/ServerComponent.astro";
-
-<Layout>
-<div class="prose">
 
 ## Hello World
 
@@ -26,6 +26,3 @@ console.log("Hello World");
 <ServerComponent>
   <ServerComponent slot="fallback" />
 </ServerComponent>
-
-</div>
-</Layout>
