@@ -7,7 +7,13 @@ import tailwind from '@astrojs/tailwind';
 
 import mdx from '@astrojs/mdx';
 
+import node from '@astrojs/node';
+
 // https://astro.build/config
 export default defineConfig({
-    integrations: [react(), tailwind(), mdx()]
+  integrations: [react(), tailwind(), mdx()],
+
+  adapter: node({
+    mode: 'standalone'
+  })
 });
