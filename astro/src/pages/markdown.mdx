@@ -1,5 +1,6 @@
-import Layout from "../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
+import ServerComponent from "@/components/samples/ServerComponent.astro";
 
 <Layout>
 <div class="prose">
@@ -19,6 +20,12 @@ console.log("Hello World");
 ```
 
 <Button>Click me</Button>
+
+### Server islands not supported in MDX
+
+<ServerComponent>
+  <ServerComponent slot="fallback" />
+</ServerComponent>
 
 </div>
 </Layout>

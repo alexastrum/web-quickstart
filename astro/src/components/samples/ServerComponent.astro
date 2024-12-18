@@ -1,0 +1,47 @@
+---
+// This is a server-side component that will run on the server
+// You can perform server-side operations here
+
+// Get current system username using Node.js os module
+import { userInfo } from "node:os";
+
+// Example of server-side data fetching
+const getData = async () => {
+  // wait 0.5s
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  return {
+    username: userInfo().username,
+  };
+};
+
+const componentType = Astro.isPrerendered ? "Prerendered" : "Server";
+const username = getData().then((data) => data.username);
+const timestamp = new Date().toLocaleString();
+const foo = Astro.locals.foo;
+---
+
+<div class="m-4 p-4 rounded-lg border border-gray-200 bg-white shadow-sm">
+  <h2 class="text-xl font-semibold mb-2">
+    {componentType} Component
+  </h2>
+  <p class="text-sm text-gray-500">
+    Username: <!-- pauses rendering here until promise resolves -->{username}
+  </p>
+  <p class="text-sm text-gray-500">Generated at: {timestamp}</p>
+  <p class="text-sm text-gray-500">Foo: {foo}</p>
+  {componentType} Component Done
+</div>
+
+<style>
+  div {
+    transition: transform 0.2s ease-in-out;
+  }
+  div:hover {
+    transform: translate(-2px, -2px);
+
+    &:active {
+      transform: translate(2px, 2px);
+    }
+  }
+</style>
