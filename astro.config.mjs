@@ -12,5 +12,6 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
     integrations: [react(), tailwind(), mdx()],
+    output: 'server',
     adapter: vercel({ edgeMiddleware: true }),
 });
