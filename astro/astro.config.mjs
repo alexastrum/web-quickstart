@@ -7,13 +7,10 @@ import tailwind from '@astrojs/tailwind';
 
 import mdx from '@astrojs/mdx';
 
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), mdx()],
-
-  adapter: node({
-    mode: 'standalone'
-  })
+    integrations: [react(), tailwind(), mdx()],
+    adapter: vercel(),
 });
