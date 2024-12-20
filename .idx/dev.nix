@@ -5,7 +5,10 @@
   # Which nixpkgs channel to use.
   channel = "stable-24.05"; # or "unstable"
   # Use https://search.nixos.org/packages to find packages
-  packages = [ pkgs.nodejs_20, pkgs.nodePackages.pnpm ];
+  packages = [ 
+    pkgs.nodejs_20
+    pkgs.nodePackages.pnpm 
+  ];
   # Sets environment variables in the workspace
   env = { };
   idx = {
@@ -16,11 +19,14 @@
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
-        install = "CI=true pnpm i";
+        install = "pnpm i";
+      };
+      # To run something each time the workspace is (re)started, use the `onStart` hook
+      onStart = {
+        install = "pnpm i";
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ "src/pages/index.astro" ];
       };
-      # To run something each time the workspace is (re)started, use the `onStart` hook
     };
     # Enable previews and customize configuration
     previews = {
@@ -29,9 +35,8 @@
         web = {
           command = [
             "pnpm"
-            "run"
+            "astro"
             "dev"
-            "--"
             "--port"
             "$PORT"
             "--hostname"
