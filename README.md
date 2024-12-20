@@ -8,6 +8,7 @@ genkit 1.0, MCP, vertex-ai + open-ai (lite-llm), zod, hono,
 astro 5 + server islands + mdx, drizzle,
 react, tailwind, shadcn, framer motion
 firebase app hosting,
+nanostores,
 postgres, supabase,
 stripe, clerk, revenuecat, posthog, resend, beehiiv
 
