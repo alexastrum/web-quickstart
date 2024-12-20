@@ -1,24 +1,10 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import ServerComponent from "@/components/samples/ServerComponent.astro";
-import Welcome from "@/components/samples/Welcome.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MarkdownLayout from "@/layouts/MarkdownLayout.astro";
 ---
 
-<script is:inline type="module">
-  // Send request to the server on each page load
-  const data = await fetch("/api/hello.json", {
-    method: "POST",
-    body: JSON.stringify(true),
-  }).then((res) => res.json());
-  console.log(data);
-</script>
-
-<Layout>
-  <ServerComponent server:defer>
-    <ServerComponent slot="fallback" />
-  </ServerComponent>
-  <Welcome />
-</Layout>
+<MarkdownLayout>
+  <h1>Welcome to A1 sample app</h1>
+  <ul>
+    <li><a class="text-blue-500" href="/samples">Samples</a></li>
+  </ul>
+</MarkdownLayout>
