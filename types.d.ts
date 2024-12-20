@@ -4,3 +4,7 @@ declare namespace App {
     foo: string;
   }
 }
+
+interface ImportMetaEnv {
+  readonly GOOGLE_GENAI_API_KEY: string;
+}
