@@ -6,6 +6,7 @@ import HelloButton from "./HelloButton";
 const Content: React.FC = () => {
   return (
     <div>
+      <HelloButton name="Houston" />
       {Array.from({ length: 10 }).map((_, index) => (
         <p
           className={`motion-opacity-in-0 motion-translate-y-in-100 motion-blur-in-md`}
@@ -20,9 +21,6 @@ const Content: React.FC = () => {
           adipisicing elit.
         </p>
       ))}
-      <p>
-        <HelloButton />
-      </p>
     </div>
   );
 };

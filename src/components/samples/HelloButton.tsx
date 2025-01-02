@@ -2,10 +2,18 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { actions } from "astro:actions";
 
-const HelloButton: React.FC = () => {
-  const handleClick = () => {
-    console.log("Hello");
+interface Props {
+  name?: string;
+}
+
+const HelloButton: React.FC<Props> = ({ name = "unknown" }) => {
+  const handleClick = async () => {
+    console.log("getGreeting clicked");
+    const { data, error } = await actions.getGreeting({ name });
+    if (error) console.error("getGreeting error", error);
+    if (data) console.log("getGreeting data", data);
   };
 
   return (
