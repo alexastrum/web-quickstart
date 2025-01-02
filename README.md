@@ -10,15 +10,17 @@ Multi-agent infrastrucure quickstart for 2025 web apps.
 
 ## Stack
 
-- astro 5 (server islands, mdx)
+- astro 5 (server islands & actions, middleware, mdx)
 - tailwind, tailwindcss-typography, tailwindcss-animate, tailwindcss-motion
 - react
 - shadcn, [lucide icons](https://lucide.dev)
+- hono (zod openapi, swagger ui)
 - genkit 1.0 (zod, [dotprompt](https://handlebarsjs.com/guide))
 
+### TODO
+
 - framer motion,
-- MCP, vertex-ai + open-ai (lite-llm)
-- hono (zod)
+- MCP, vertex-ai + open-ai (lite-llm),
 - drizzle,
 - nanostores.
 
@@ -36,3 +38,31 @@ Error: https://react.dev/link/hydration-mismatch
 pnpm install
 pnpm dev
 ```
+
+### Testing
+
+```bash
+pnpm build
+pnpm preview
+```
+
+### Deployment
+
+```bash
+pnpm astro add netlify
+```
+
+Update `astro.config.mjs`:
+
+```ts
+import netlify from "@astrojs/netlify";
+
+// ...
+
+export default defineConfig({
+  adapter: netlify(),
+  // ...
+});
+```
+
+Configure Netlify GitHub integration.
