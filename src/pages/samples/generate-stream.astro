@@ -2,9 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { ai } from "@/lib/genkit";
 
-const { stream } = await ai.generateStream(
-  "Hello, Gemini! tell a story with 1000 words"
-);
+const { stream } = await ai.generateStream("Hello, Gemini!");
 
 async function* streamToGenerator() {
   for await (const chunk of stream) {

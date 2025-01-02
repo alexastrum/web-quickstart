@@ -2,7 +2,7 @@
 layout: "@/layouts/MarkdownLayout.astro"
 ---
 
-import { Button } from "@/components/ui/button";
+import HelloButton from "@/components/samples/HelloButton";
 import ServerComponent from "@/components/samples/ServerComponent.astro";
 
 ## Hello World
@@ -19,7 +19,7 @@ Don't want to use any of this? Delete everything in this file, the `assets`, `co
 console.log("Hello World");
 ```
 
-<Button>Click me</Button>
+<HelloButton client:load>Click me</HelloButton>
 
 ### Server islands not supported in MDX
 

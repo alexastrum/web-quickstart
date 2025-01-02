@@ -3,6 +3,9 @@ import { gemini15Flash, googleAI } from "@genkit-ai/googleai";
 import type { APIRoute } from "astro";
 import { genkit } from "genkit";
 
+// do not prerender this page during build time
+export const prerender = false;
+
 // configure a Genkit instance
 const ai = genkit({
   plugins: [googleAI({ apiKey: import.meta.env.GOOGLE_GENAI_API_KEY })],
@@ -11,9 +14,7 @@ const ai = genkit({
 
 export const GET: APIRoute = async ({ request }) => {
   // make a generation request
-  const { stream } = await ai.generateStream(
-    "Hello, Gemini! Tell 1000 word story"
-  );
+  const { stream } = await ai.generateStream("Hello, Gemini!");
 
   const readableStream = new ReadableStream({
     async start(controller) {
