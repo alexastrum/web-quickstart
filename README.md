@@ -5,24 +5,29 @@ Multi-agent infrastrucure quickstart for 2025 web apps.
 ## Supported IDEs
 
 - Project IDX
+  - [ ] Open in IDX button
+  - [ ] Terraform for Firebase / Google Cloud
 - Cursor
 - VS Code
+- Zed
 
 ## Stack
 
-- astro 5 (server islands & actions, middleware, mdx)
-- tailwind, tailwindcss-typography, tailwindcss-animate, tailwindcss-motion
-- react
-- shadcn, [lucide icons](https://lucide.dev)
-- hono (zod openapi, swagger ui)
-- genkit 1.0 (zod, [dotprompt](https://handlebarsjs.com/guide))
+- Astro 5 (server islands & actions, middleware, mdx)
+- Tailwind, tailwindcss-typography, tailwindcss-animate, tailwindcss-motion
+- React
+- shadcn, [Lucide icons](https://lucide.dev)
+- Hono (zod OpenAPI, Swagger UI)
+- Genkit 1.0 (zod, [dotprompt](https://handlebarsjs.com/guide))
 
-### TODO
+TODO:
 
-- framer motion,
-- MCP, vertex-ai + open-ai (lite-llm),
-- drizzle,
-- nanostores.
+- [ ] framer motion
+- [ ] MCP
+- [ ] vertex-ai
+- [ ] lite-llm
+- [ ] drizzle
+- [ ] nanostores
 
 ### Libs that I'd like to use, but are not yet supported
 
@@ -33,6 +38,18 @@ Uses `document.querySelectorAll` and `setAttribute`, making it incompatible with
 Error: https://react.dev/link/hydration-mismatch
 
 ## Local Development
+
+### Recommended environment
+
+- MacOS on Apple Silicon
+- Zed with Google AI API key
+
+```bash
+brew install --cask ghostty
+brew install --cask zed
+```
+
+### Running
 
 ```bash
 pnpm install
@@ -46,7 +63,15 @@ pnpm build
 pnpm preview
 ```
 
-### Deployment
+### Deployment on Firebase
+
+See https://docs.astro.build/en/guides/deploy/google-firebase
+
+TODO:
+
+- [ ] Firebase App Hosting support
+
+### Deployment on Netlify
 
 ```bash
 pnpm astro add netlify
