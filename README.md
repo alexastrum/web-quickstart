@@ -27,7 +27,13 @@ TODO:
 - [ ] vertex-ai
 - [ ] lite-llm
 - [ ] drizzle
+- [ ] posthog (for session recording)
 - [ ] nanostores
+
+Alternatives:
+
+- https://opensaas.sh - excellent sull-stack SaaS starter, Prisma (instead of Drizzle), TailAdmin (instead of Shadcn), uses own `.wasp` language for configurations
+- https://github.com/fogbender/b2b-saaskit - great opinated choices, not active in the last 6 months
 
 ### Libs that I'd like to use, but are not yet supported
 
@@ -45,8 +51,14 @@ Error: https://react.dev/link/hydration-mismatch
 - Zed with Google AI API key
 
 ```bash
+# Install dev tools
 brew install --cask ghostty
 brew install --cask zed
+
+# Install node.js
+brew install nvm
+nvm install 22
+corepack enable
 ```
 
 ### Running
