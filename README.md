@@ -19,6 +19,8 @@ Multi-agent infrastrucure quickstart for 2025 web apps.
 - shadcn, [Lucide icons](https://lucide.dev)
 - Hono (zod OpenAPI, Swagger UI)
 - Genkit 1.0 (zod, [dotprompt](https://handlebarsjs.com/guide))
+- [ ] Firebase AI Monitoring
+- [ ] Drizzle with Postgres
 
 TODO:
 
@@ -26,7 +28,6 @@ TODO:
 - [ ] MCP
 - [ ] vertex-ai
 - [ ] lite-llm
-- [ ] drizzle
 - [ ] posthog (for session recording)
 - [ ] nanostores
 
@@ -64,6 +65,7 @@ corepack enable
 ### Running
 
 ```bash
+nvm use 22
 pnpm install
 pnpm dev
 ```
