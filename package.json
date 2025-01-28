@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "genkit:dev": "genkit start -- pnpm run dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -35,6 +36,7 @@
   },
   "packageManager": "pnpm@10.0.0",
   "devDependencies": {
-    "@types/node": "^22.10.2"
+    "@types/node": "^22.10.2",
+    "genkit-cli": "^0.9.12"
   }
 }
