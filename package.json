@@ -14,8 +14,9 @@
     "@astrojs/node": "^9.0.0",
     "@astrojs/react": "^4.1.2",
     "@astrojs/tailwind": "^5.1.4",
-    "@genkit-ai/firebase": "^0.9.12",
-    "@genkit-ai/googleai": "^0.9.12",
+    "@genkit-ai/evaluator": "^1.0.0-rc.6",
+    "@genkit-ai/firebase": "^1.0.0-rc.6",
+    "@genkit-ai/googleai": "^1.0.0-rc.6",
     "@hono/swagger-ui": "^0.5.0",
     "@hono/zod-openapi": "^0.18.3",
     "@radix-ui/react-slot": "^1.1.1",
@@ -25,7 +26,7 @@
     "astro": "^5.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "genkit": "^0.9.12",
+    "genkit": "1.0.0-rc.6",
     "lucide-react": "^0.468.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -37,6 +38,6 @@
   "packageManager": "pnpm@10.0.0",
   "devDependencies": {
     "@types/node": "^22.10.2",
-    "genkit-cli": "^0.9.12"
+    "genkit-cli": "^1.0.0-rc.6"
   }
 }
