@@ -1,0 +1,45 @@
+---
+import { z, Document } from "genkit";
+import { gemini20FlashExp } from "@genkit-ai/googleai";
+import { ai } from "@/lib/genkit";
+
+// Dummy retriever that always returns the same docs
+export const dummyRetriever = ai.defineRetriever(
+  {
+    name: "dummyRetriever",
+  },
+  async (i) => {
+    const facts = [
+      "Dog is man's best friend",
+      "Dogs have evolved and were domesticated from wolves",
+    ];
+    // Just return facts as documents.
+    return { documents: facts.map((t) => Document.fromText(t)) };
+  }
+);
+
+// A simple question-answering flow
+export const qaFlow = ai.defineFlow(
+  {
+    name: "qaFlow",
+    inputSchema: z.string(),
+    outputSchema: z.string(),
+  },
+  async (query) => {
+    const factDocs = await ai.retrieve({
+      retriever: dummyRetriever,
+      query,
+      options: { k: 2 },
+    });
+
+    const llmResponse = await ai.generate({
+      model: gemini20FlashExp,
+      prompt: `Answer this question with the given context: ${query}. Do NOT explain yourself. If you can't answer the question, say "I don't know"`,
+      docs: factDocs,
+    });
+    return llmResponse.text;
+  }
+);
+---
+
+{qaFlow("What is the best pet that is friend to humans?")}
