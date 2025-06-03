@@ -22,7 +22,7 @@ Genkit is integrated to power AI flows within the application.
 - **Using Flows:**
     - **From Astro Pages/Components:** Genkit flows can be invoked directly from server-side Astro code (e.g., within `.astro` files or server components).
     - **As API Endpoints:** Genkit flows can be exposed as API endpoints. The `startGenkit()` function in `src/actions/index.ts` (if present, or a similar setup) often handles this, making flows accessible via HTTP requests. Check `src/pages/api/` for examples of how Genkit flows might be exposed or called by Hono routes.
-- **Evaluation:** Genkit includes tools for evaluating the performance and quality of your flows. Datasets for evaluation can be created (e.g., `data-samples/genkit/myFactsQaDatset.jsonl`) and evaluators can be run using the Genkit CLI.
+- **Evaluation:** Genkit includes tools for evaluating the performance and quality of your flows. Datasets for evaluation can be created (e.g., `data-samples/genkit/myFactsQaDataset.jsonl`) and evaluators can be run using the Genkit CLI.
 
 ### Astro Components
 The project utilizes Astro for its component-based architecture, allowing for both static and dynamic content.
